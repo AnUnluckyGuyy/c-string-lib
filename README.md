@@ -9,7 +9,7 @@ A string library with several functions to use, manipulate and process strings.
 
 int main(void) {
     // Create a new string
-    str name = str_new("john");
+    str name = str_new("john");git ad
     printf("name: %s\n", str_data(&name));
 
     // Create an empty string
@@ -38,7 +38,7 @@ int main(void) {
     after copy, empty: john
     name after write: alice
 
-## compiling:
+## Compiling:
 ```bash
 make
 ```
