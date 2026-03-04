@@ -57,9 +57,7 @@ bool str_equals(const str *s1, const str *s2) {
     if (s1->size != s2->size) return false;
     size_t len = str_len(s1);
     for (size_t i = 0; i<len; i++) {
-        char c1 = str_at(s1, i);
-        char c2 = str_at(s2, i);
-        if (c1 != c2) {
+        if (str_at(s1, i) != str_at(s2, i)) {
             return false;
         }
     }
