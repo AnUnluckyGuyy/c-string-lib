@@ -6,6 +6,7 @@
 #include "str.h"
 
 str str_new(const char* s) {
+    if (!s) return (str) {.size = 0, .data = NULL};
     str string = { .size = 0 };
     size_t str_size = strlen(s);
     string.data = malloc(str_size+1);
@@ -49,4 +50,24 @@ bool str_is_empty(const str *string) {
         return true;
     }
     return false;
+}
+
+bool str_equals(const str *s1, const str *s2) {
+    if (!s1->data || !s2->data) return false;
+    if (s1->size != s2->size) return false;
+    size_t len = str_len(s1);
+    for (size_t i = 0; i<len; i++) {
+        char c1 = str_at(s1, i);
+        char c2 = str_at(s2, i);
+        if (c1 != c2) {
+            return false;
+        }
+    }
+    return true;
+}
+
+char str_at(const str *string, size_t index) {
+    if (index >= string->size) return '\0';
+    if (!string->data) return '\0';
+    return string->data[index];
 }

@@ -17,5 +17,7 @@ const char *str_data(const str *string);
 void str_write(str *str_dest, const char* src);
 size_t str_len(const str *string);
 bool str_is_empty(const str *string);
+bool str_equals(const str *s1, const str *s2);
+char str_at(const str *string, size_t index);
 
 #endif
