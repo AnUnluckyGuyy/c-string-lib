@@ -19,5 +19,8 @@ size_t str_len(const str *string);
 bool str_is_empty(const str *string);
 bool str_equals(const str *s1, const str *s2);
 char str_at(const str *string, size_t index);
+void str_append(str *dest, const str *append_string);
+bool str_startswith(const str *string, const str *prefix);
+bool str_endswith(const str *string, const str *sufix);
 
 #endif
